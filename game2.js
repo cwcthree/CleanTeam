@@ -25,7 +25,7 @@ function setup() {
     createCanvas(900,700);
     noStroke();
     rectMode(CENTER)
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 6; i++) {
       let temp = new foodwaste(random(50, 650), 425, random(25, 75), random(25, 75));
       foodwasteArray.push(temp);
   }
@@ -37,29 +37,10 @@ function draw() {
     image(trashcanimage, mouseX, mouseY, 40, 50)
     for (let i = 0; i < foodwasteArray.length; i++) {
       image(foodwasteimage, foodwasteArray[i].xPos, foodwasteArray[i].yPos, foodwasteArray[i].sizeValue, foodwasteArray[i].sizeValue);
-  }
-
-    
-    
-   image(foodwasteimage, xPos, 640, 50, 50);
+    }
+   
 
  
-   xPos += 4 * direction;
- 
-   if (xPos > 500) {
-       xPos = -25;
-   }
-  image(foodwasteimage,xPos,570,50,50);
-
- xPos += 2 * direction;
- 
-   if (xPos > 500) {
-       xPos = -25;
-   }
-
-   image(foodwasteimage, xPos, 450, 50, 50);
-
-
    textSize(27)
    text("score = " + score, 560, 30)
    text("Time: " + timer, 40, 30)
@@ -96,6 +77,10 @@ function draw() {
         foodwasteArray[i].random(50, 650)
         
     }
+    if (timer == 0) {
+        location.reload()
+    }
+
 }
 }
 
