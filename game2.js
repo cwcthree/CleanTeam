@@ -22,7 +22,8 @@ function preload() {
 function setup() {
     bg = loadImage("images/beach.png")
     endbg= loadImage('images/sea-animals.png')
-    createCanvas(900,700);
+    let canvas = createCanvas(900, 700);
+    canvas.position(200, 100)
     noStroke();
     rectMode(CENTER)
     for (let i = 0; i < 6; i++) {
