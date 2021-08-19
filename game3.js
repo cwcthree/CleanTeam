@@ -7,7 +7,7 @@ let polarBearY;
 let polarBearLeft, polarBearRight, polarBearTop, polarBearBottom;
 let score = 0;
 let i;
-let timer = 50;
+let timer = 15;
 
 
 function preload() {
