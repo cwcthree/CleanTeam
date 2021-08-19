@@ -63,19 +63,20 @@ function draw() {
    function mouseClicked() {
     for (let i = 0; i < foodwasteArray.length; i++) {
 
-    foodwasteLeft = foodwasteArray[i].xPos;
-    foodwasteRight = foodwasteArray[i].xPos + foodwasteArray[i].sizeValue;
-    foodwasteTop = foodwasteArray[i].yPos;
-    foodwasteBottom = foodwasteArray[i].yPos + foodwasteArray[i].sizeValue;
-
-    if (mouseX > foodwasteRight || mouseX < foodwasteLeft || mouseY > foodwasteBottom || mouseY < foodwasteTop) {
-        
-    }
-
-    else {
-        score+= 1;
-        console.log(score);
-        foodwasteArray[i].random(50, 650)
+      foodwasteLeft = foodwasteArray[i].xPos;
+      foodwasteRight = foodwasteArray[i].xPos + foodwasteArray[i].sizeValue;
+      foodwasteTop = foodwasteArray[i].yPos;
+      foodwasteBottom = foodwasteArray[i].yPos + foodwasteArray[i].sizeValue;
+  
+      if (mouseX > foodwasteRight || mouseX < foodwasteLeft || mouseY > foodwasteBottom || mouseY < foodwasteTop) {
+          
+      }
+  
+      else {
+          console.log(score);
+          score++;
+          foodwasteArray[i].xPos = random(50, 650)
+      }
         
     }
     if (timer == 0) {
@@ -83,7 +84,7 @@ function draw() {
     }
 
 }
-}
+
 
 class foodwaste {
     constructor(x, y, size) {
